@@ -28,7 +28,7 @@
     "version-control",
     "electron"
   ],
-  "author": "GitUI Team <gitui@example.com>",
+  "author": "GitUI Team <218556134+jaychouchannel@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.0.0",
