@@ -12,4 +12,11 @@ module.exports = {
   ],
   coverageDirectory: 'coverage',
   verbose: true,
+  globals: {
+    'ts-jest': {
+      tsconfig: {
+        types: ['jest', 'node']
+      }
+    }
+  }
 };
