@@ -68,7 +68,8 @@ export class OutputParser {
       const isRemote = line.includes('remotes/');
       
       // Extract branch name and commit hash
-      const parts = line.replace('*', '').trim().split(/\s+/);
+      // Remove the leading '*' marker (only present for current branch)
+      const parts = line.replace(/^\*/, '').trim().split(/\s+/);
       const name = parts[0];
       const lastCommit = parts[1] || '';
 
