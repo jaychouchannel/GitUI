@@ -5,8 +5,11 @@ yarn.lock
 
 # Build output
 dist/
-build/
 out/
+
+# Keep build resources but ignore build output
+build/*
+!build/icons/
 
 # Development
 .vscode/
@@ -39,3 +42,6 @@ temp/
 
 # Electron
 *.electron/
+
+# Packaging output
+release/

@@ -76,6 +76,23 @@ npm run build
 npm test
 ```
 
+### 打包应用
+
+```bash
+# 打包到当前平台
+npm run package
+
+# 打包到特定平台
+npm run package:win    # Windows
+npm run package:mac    # macOS
+npm run package:linux  # Linux
+
+# 打包到所有平台
+npm run package:all
+```
+
+详细的打包和发布指南请参考 [docs/PACKAGING_GUIDE.md](./docs/PACKAGING_GUIDE.md)
+
 ## 核心模块
 
 ### 1. Git 命令层
@@ -146,11 +163,11 @@ await commitManager.createCommit('Initial commit');
 - [x] 远程仓库操作
 - [x] 设置和配置
 
-### 第四阶段 - 优化和发布
-- [ ] 性能优化
-- [ ] 测试覆盖
-- [ ] 文档完善
-- [ ] 打包和发布
+### 第四阶段 - 优化和发布 (✓ 已完成)
+- [x] 性能优化
+- [x] 测试覆盖
+- [x] 文档完善
+- [x] 打包和发布
 
 ## 贡献指南
 
