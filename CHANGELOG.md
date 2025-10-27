@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - 2025-10-27
+## [0.1.0] - 2024-10-27
 
 ### Added
 - Phase 4: Packaging and Release Configuration
@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Added GitHub Actions workflow for automated releases
   - Added build resources directory structure
   - Added icon guidelines and documentation
+  - **Created application icons for all platforms** (icon.icns, icon.ico, icon.png)
 
 - Phase 3: Feature Completion
   - DiffViewer component with unified and split view modes
@@ -52,6 +53,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for DMG and ZIP (macOS - Intel and Apple Silicon)
 - Support for AppImage, DEB, and RPM (Linux)
 - GitHub Release publishing configuration
+
+### Fixed
+- Fixed OutputParser commit parsing to handle empty parent lines correctly
+- All tests now passing (83/83)
 
 [Unreleased]: https://github.com/jaychouchannel/GitUI/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/jaychouchannel/GitUI/releases/tag/v0.1.0
