@@ -98,8 +98,17 @@ export class OutputParser {
     const commitBlocks = output.split('--END--').filter(block => block.trim());
 
     for (const block of commitBlocks) {
+      // Trim the block and split by newlines
       const lines = block.trim().split('\n');
-      if (lines.length < 7) continue;
+      
+      // We expect 7 lines: hash, shortHash, author, authorEmail, timestamp, message, parents
+      // If we have 6 lines, the parents line is missing (empty)
+      if (lines.length < 6) continue;
+      
+      // Pad with empty string if parents line is missing
+      if (lines.length === 6) {
+        lines.push('');
+      }
 
       const [hash, shortHash, author, authorEmail, timestamp, message, parents] = lines;
 
@@ -110,7 +119,7 @@ export class OutputParser {
         authorEmail,
         date: new Date(parseInt(timestamp) * 1000),
         message,
-        parents: parents ? parents.split(' ') : [],
+        parents: parents && parents.trim() ? parents.split(' ').filter(p => p) : [],
         files: [],
       });
     }
