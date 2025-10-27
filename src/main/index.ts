@@ -21,7 +21,6 @@ function createWindow(): void {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      preload: path.join(__dirname, 'preload.js'),
     },
     title: 'GitUI - Graphical Git Tool',
     show: false, // Don't show until ready
