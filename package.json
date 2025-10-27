@@ -2,7 +2,7 @@
   "name": "gitui",
   "version": "0.1.0",
   "description": "A graphical Git tool with user-friendly interface",
-  "main": "dist/main/index.js",
+  "main": "dist/main/main/index.js",
   "scripts": {
     "dev": "concurrently \"npm run dev:main\" \"npm run dev:renderer\"",
     "dev:main": "tsc -p tsconfig.main.json && electron .",
@@ -28,7 +28,7 @@
     "version-control",
     "electron"
   ],
-  "author": "GitUI Team",
+  "author": "GitUI Team <gitui@example.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.0.0",
