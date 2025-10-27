@@ -1,8 +1,8 @@
-import { Remote } from '../types';
-import { CommandBuilder } from '../git/CommandBuilder';
-import { CommandExecutor } from '../git/CommandExecutor';
-import { OutputParser } from '../git/OutputParser';
-import { ErrorHandler } from '../git/ErrorHandler';
+import { Remote } from '../../types';
+import { CommandBuilder } from '../../git/CommandBuilder';
+import { CommandExecutor } from '../../git/CommandExecutor';
+import { OutputParser } from '../../git/OutputParser';
+import { ErrorHandler } from '../../git/ErrorHandler';
 
 /**
  * Manages Git remote repository operations

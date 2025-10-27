@@ -12,7 +12,7 @@ export class CommandExecutor {
     return new Promise((resolve) => {
       const [cmd, ...args] = command;
       
-      const process = spawn(cmd, args, {
+      const childProcess = spawn(cmd, args, {
         cwd: options.cwd || process.cwd(),
         env: { ...process.env, ...options.env },
         timeout: options.timeout,
@@ -21,15 +21,15 @@ export class CommandExecutor {
       let stdout = '';
       let stderr = '';
 
-      process.stdout?.on('data', (data) => {
+      childProcess.stdout?.on('data', (data: Buffer) => {
         stdout += data.toString();
       });
 
-      process.stderr?.on('data', (data) => {
+      childProcess.stderr?.on('data', (data: Buffer) => {
         stderr += data.toString();
       });
 
-      process.on('close', (code) => {
+      childProcess.on('close', (code: number | null) => {
         resolve({
           stdout: stdout.trim(),
           stderr: stderr.trim(),
@@ -38,7 +38,7 @@ export class CommandExecutor {
         });
       });
 
-      process.on('error', (error) => {
+      childProcess.on('error', (error: Error) => {
         resolve({
           stdout: stdout.trim(),
           stderr: error.message,
@@ -60,7 +60,7 @@ export class CommandExecutor {
     return new Promise((resolve) => {
       const [cmd, ...args] = command;
       
-      const process = spawn(cmd, args, {
+      const childProcess = spawn(cmd, args, {
         cwd: options.cwd || process.cwd(),
         env: { ...process.env, ...options.env },
         timeout: options.timeout,
@@ -69,19 +69,19 @@ export class CommandExecutor {
       let stdout = '';
       let stderr = '';
 
-      process.stdout?.on('data', (data) => {
+      childProcess.stdout?.on('data', (data: Buffer) => {
         const output = data.toString();
         stdout += output;
         callback(output, false);
       });
 
-      process.stderr?.on('data', (data) => {
+      childProcess.stderr?.on('data', (data: Buffer) => {
         const output = data.toString();
         stderr += output;
         callback(output, true);
       });
 
-      process.on('close', (code) => {
+      childProcess.on('close', (code: number | null) => {
         resolve({
           stdout: stdout.trim(),
           stderr: stderr.trim(),
@@ -90,7 +90,7 @@ export class CommandExecutor {
         });
       });
 
-      process.on('error', (error) => {
+      childProcess.on('error', (error: Error) => {
         callback(error.message, true);
         resolve({
           stdout: stdout.trim(),

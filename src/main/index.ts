@@ -75,13 +75,13 @@ app.on('activate', () => {
 /**
  * Handle uncaught exceptions
  */
-process.on('uncaughtException', (error) => {
+process.on('uncaughtException', (error: Error) => {
   console.error('Uncaught Exception:', error);
 });
 
 /**
  * Handle unhandled promise rejections
  */
-process.on('unhandledRejection', (reason, promise) => {
+process.on('unhandledRejection', (reason: any, promise: Promise<any>) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
