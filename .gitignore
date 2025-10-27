@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build output
+dist/
+build/
+out/
+
+# Development
+.vscode/
+.idea/
+*.log
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# IDE
+*.sublime-project
+*.sublime-workspace
+
+# Electron
+*.electron/
